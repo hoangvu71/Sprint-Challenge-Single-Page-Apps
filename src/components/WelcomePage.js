@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import SearchForm from "./SearchForm"
 import CharacterList from "./CharacterList";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
+import Episodes from "./Episodes";
 
 export default function WelcomePage() {
   const [search, setSearch] = useState("")
@@ -13,7 +14,12 @@ export default function WelcomePage() {
       </header>
       <Route exact path="/">
         <SearchForm search={search} setSearch={setSearch}/>
+        <Link to="/episodes">Episode List</Link>
         <CharacterList search={search} />
+      </Route>
+      
+      <Route path="/episodes">
+        <Episodes />
       </Route>
       
     </section>

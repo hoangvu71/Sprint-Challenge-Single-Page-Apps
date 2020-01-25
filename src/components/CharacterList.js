@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios"
 import CharacterCard from "./CharacterCard";
 import {ImageWrapper} from "./Style"
+import { Link } from "react-router-dom"
+import Episodes from "./Episodes";
 export default function CharacterList(props) {
   // TODO: Add useState to track data from useEffect
   const [char, setChar] = useState([]);
@@ -26,6 +28,7 @@ export default function CharacterList(props) {
       <ImageWrapper>
         {char.map(ele => <CharacterCard episode={ele.episode} name={ele.name} image={ele.image} key={ele.id}/>)}
       </ImageWrapper>
+      
     </section>
   );
 }
